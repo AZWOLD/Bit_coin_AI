@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import tensorflow as tf
 import numpy as np
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Load your LSTM model
 model = tf.keras.models.load_model("BitCoin_PRE_AI.h5")
